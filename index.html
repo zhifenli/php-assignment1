@@ -1,16 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Php info:</h1>
-    <a href="http://pancodes.net:8086/www/info.php">Info page: http://pancodes.net:8086/www/info.php</a>
-    <br>
-    <p>Php info screenshot:</p>
-    <img src='images/phpinfo.JPG' width="100%" style="border: 1px solid gray">
-</body> 
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <title>php_exercise2</title>
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+        h1, h3, table {
+          margin-left: 3rem;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Database: php_exercise2</h1>
+    <h3>Database Table:</h3>
+    <table >
+        <tr>
+          <th>Column Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>cust_ID</td>
+          <td>BIGINT <br> UNSIGNED</td>
+          <td>Customer ID number.<br>AUTO_INCREMENT. Primary key </td>
+        </tr>
+        <tr>
+          <td>Last-name</td>
+          <td>VARCHAR(40)</td>
+          <td>Customer last name</td>
+        </tr>
+        <tr>
+            <td>First_name</td>
+            <td>VARCHAR(40)</td>
+            <td>Customer first name</td>
+          </tr>
+          <tr>
+            <td>Phone</td>
+            <td>CHAR(15)</td>
+            <td>Customer phone number</td>
+          </tr>
+      </table>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  </body>
 </html>
