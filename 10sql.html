@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>10 SQL queries</title>
+    <style>
+        code {
+            display: block;
+            width: 98%;
+            padding: 10px;
+            border: 1px solid gainsboro;
+            border-radius: 3px;
+            background-color: #cccedc;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>10 SQL queries</h1>
+    <h3>
+        1. Add a new row of data to the database
+    </h3>
+    <code>
+        INSERT INTO `customers` (`first_name`, `last_name`, `phone`, `email`, `address`) 
+        VALUES
+        ('Lucy', 'Little', '6475555555', 'lucy.little@gmail.com', 'New York City');
+    </code>
+
+    <h3>
+        2. Retrieve all the information in the database
+    </h3>
+    <code>
+        SELECT * FROM `customers`;
+    </code>
+
+    <h3>
+        3. Retrieve the name and address of all customers in the database.
+    </h3>
+    <code>
+        SELECT `first_name`, `last_name`, `email` FROM `customers`;
+    </code>
+
+    <h3>
+        4. Retrieve the name and address of all customers who live in New York City.
+    </h3>
+    <code>
+        SELECT `first_name`, `last_name`, `address` FROM `customers` WHERE address = 'New York City';
+    </code>
+
+    <h3>
+        5. Change the address of a customer named John Smith.
+    </h3>
+    <code>
+        UPDATE `customers` SET address = 'New Hampshire' where `first_name` = 'John' and last_name = 'Smith';
+    </code>
+
+    <h3>
+        6. Remove all the data for a customer named Mary who lives in California.
+    </h3>
+    <code>
+        delete from `customers` where `first_name` = 'Mary' and `address` = 'California';
+    </code>
+
+    <h3>
+        7. Find out which state a customer named Juan Lopez lives in.
+    </h3>
+    <code>
+        SELECT address FROM `customers` where first_name = 'Juan' && last_name = 'Lopez';
+    </code>
+
+    <h3>
+        8. Get the names of all customers who have an email address that ends in .edu.
+    </h3>
+    <code>
+        select first_name, last_name from customers where email like '%.edu';
+    </code>
+
+    <h3>
+        9. Get the phone numbers of all customers who do not live in Texas.
+    </h3>
+    <code>
+        select phone from customers where address != 'Texas';
+    </code>
+
+    <h3>
+        10. Get the names of all customers who live in one of the southern states.
+    </h3>
+    <code>
+        select first_name, last_name from customers where address in 
+        ('Delaware', 'Florida', 'Georgia', 'Maryland', 'North Carolina',' South Carolina', 'Virginia',
+        'West Virginia', 'Alabama', 'Kentucky', 'Mississippi', 'Tennessee', 'Arkansas', 'Louisiana', 
+        'Oklahoma', 'Texas', 'California'
+        );
+    </code>
+
+</body>
+
+</html>
