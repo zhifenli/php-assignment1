@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exe6 Database Design</title>
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+        h1, h3, table {
+          margin-left: 3rem;
+        }
+
+        th, td {
+            padding: 5px;
+        }
+        code {
+            display: block;
+            width: 98%;
+            padding: 10px;
+            border: 1px solid gainsboro;
+            border-radius: 3px;
+            background-color: #cccedc;
+        }
+    </style>
+</head>
+<body>
+    <h2>Database: phpexe6</h2>
+    <h3>Table: customers</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Null</th>
+            <th>Default</th>
+            <th>Constraints</th>
+            <th>Extra</th>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>bigint unsigned</td>
+            <td>No</td>
+            <td></td>
+            <td>PRIMARY KEY</td>
+            <td>AUTO_INCREMENT</td>
+        </tr>
+        <tr>
+            <td>username</td>
+            <td>varchar(255)</td>
+            <td>No</td>
+            <td></td>
+            <td>UNIQUE</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>email</td>
+            <td>varchar(255)</td>
+            <td>No</td>
+            <td></td>
+            <td>UNIQUE</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>password</td>
+            <td>varchar(255)</td>
+            <td>No</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>address</td>
+            <td>varchar(1000)</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>varchar(10)</td>
+            <td>No</td>
+            <td>free</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>created</td>
+            <td>timestamp</td>
+            <td>No</td>
+            <td>CURRENT_TIMESTAMP</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <h3>Table: customer_login</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Null</th>
+            <th>Default</th>
+            <th>Constraints</th>
+            <th>Extra</th>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>bigint unsigned</td>
+            <td>No</td>
+            <td></td>
+            <td>PRIMARY KEY</td>
+            <td>AUTO_INCREMENT</td>
+        </tr>
+        <tr>
+            <td>customer_id</td>
+            <td>bigint unsigned</td>
+            <td>No</td>
+            <td></td>
+            <td>FOREIGN KEY</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>login_timestamp</td>
+            <td>timestamp</td>
+            <td>No</td>
+            <td>CURRENT_TIMESTAMP</td>
+            <td></td>
+            <td></td>
+        </tr>
+    
+    </table>
+
+    <h3>Table: products</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Null</th>
+            <th>Default</th>
+            <th>Constraints</th>
+            <th>Extra</th>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>bigint unsigned</td>
+            <td>No</td>
+            <td></td>
+            <td>PRIMARY KEY</td>
+            <td>AUTO_INCREMENT</td>
+        </tr>
+        <tr>
+            <td>category_id</td>
+            <td>bigint unsigned</td> <!-- categories.id-->
+            <td>No</td>
+            <td></td>
+            <td>FOREIGN KEY</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>varchar(255)</td>
+            <td>No</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>description</td>
+            <td>varchar(1000)</td>
+            <td>No</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>price</td>
+            <td>float</td>
+            <td>No</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>image_small</td>
+            <td>varchar(255)</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>image_main</td>
+            <td>varchar(255)</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    
+    <h3>Table: categories</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Null</th>
+            <th>Default</th>
+            <th>Constraints</th>
+            <th>Extra</th>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>bigint unsigned</td>
+            <td>No</td>
+            <td></td>
+            <td>PRIMARY KEY</td>
+            <td>AUTO_INCREMENT</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>varchar(50)</td>
+            <td>No</td>
+            <td></td>
+            <td>UNIQUE</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>description</td>
+            <td>varchar(255)</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>image</td>
+            <td>varchar(255)</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+    </table>
+
+    <h3>Queries to recreate tables:</h3>
+    <code>
+        DROP TABLE IF EXISTS customer_login; <br>
+        DROP TABLE IF EXISTS customers;<br><br>
+
+        -- customers<br>
+        CREATE TABLE `customers` (<br>
+        `id` bigint UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,<br>
+        `email` varchar(255) NOT NULL,<br>
+        `username` varchar(255) NOT NULL,<br>
+        `password` varchar(255) NOT NULL,<br>
+        `type` varchar(10) NOT NULL DEFAULT 'free',<br>
+        `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP<br>
+        );<br><br>
+
+        ALTER TABLE `customers`<br>
+        ADD UNIQUE KEY `unique_email` (`email`),<br>
+        ADD UNIQUE KEY `unique_name` (`username`);<br><br>
+
+        -- customer_login<br>
+
+        CREATE TABLE `customer_login` (<br>
+        `id` bigint unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,<br>
+        `customer_id` bigint unsigned NOT NULL,    <br>
+        `login_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP<br>
+        );<br><br>
+
+        ALTER TABLE `customer_login` <br>
+        ADD CONSTRAINT `fk_customer_id` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) on delete CASCADE ON UPDATE RESTRICT;
+    </code>
+</body>
+</html>
