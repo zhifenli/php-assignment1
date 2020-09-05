@@ -8,15 +8,16 @@
 </head>
 <body>
     <div>
-        <p>Exe6 Pseudo Plan</p>
+        <h1>Exe6 Pseudo Plan</h1>
         <strong>Login Page</strong>
         <ol>
-            <li>When login, display empty login form;</li>
+            <li>If user already logged in, redirect to catlog page;</li>
+            <li>Otherwise, display empty login form;</li>
             <li>When submit login form, check validity;</li>
             <li>If any field login invalid (empty), display the form with submitted data, and error messages;</li>
             <li>If all required field are filled with value, send sql query to database to find customer;</li>
             <li>If customer not found, display error message;</li>
-            <li>Redirect to catalog page.</li>
+            <li>If login succeeded, redirect to catalog page.</li>
         </ol>
         
         <strong>Registration Page</strong>
@@ -31,6 +32,7 @@
 
         <strong>Catalog Page</strong>
         <ol>
+            <li>If user didn't login, redirect to login page;</li>
             <li>Fetch and display all categories;</li>
             <li>Display products of selected category, if user selected one</li>
             <li>Add a product to the cart associated with the user, when user clicked "Buy" button;</li>
@@ -38,6 +40,7 @@
 
         <strong>Shopping Cart Page</strong>
         <ol>
+            <li>If user didn't login, redirect to login page;</li>
             <li>Display empty message if no user haven't buy any products;</li>
             <li>If there's any product in cart, fetch and display products;</li>
             <li>Calculate and display total cost;</li>
